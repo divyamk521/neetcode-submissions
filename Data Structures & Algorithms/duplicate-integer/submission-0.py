@@ -1,11 +1,11 @@
 class Solution:
     def hasDuplicate(self, nums: List[int]) -> bool:
-        freq={}
+        seen=set()
 
         for i in nums:
-            freq[i]=freq.get(i,0)+1
-            if freq[i]>=2:
+            if i in seen:
                 return True
+            seen.add(i)
 
         return False
         
